@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "20252160574",
+    "firebase_url": "https://easywallet-a12a3.firebaseio.com",
+    "project_id": "easywallet-a12a3",
+    "storage_bucket": "easywallet-a12a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20252160574:android:b3a7f08af4c4c8f3",
+        "android_client_info": {
+          "package_name": "com.example.easywallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCESjvVHl4e9oXZnxw4SrMDBMZ27_zGI1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20252160574-q93snn5kq6h3l28jtibpm7icpo679024.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
