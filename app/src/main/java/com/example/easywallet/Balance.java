@@ -111,6 +111,7 @@ public class Balance extends Fragment {
         String name = settings.getString("display_name", null);
         String city = settings.getString("city", null);
 
+
         if(name != null && city != null) {
             TextView welcome = rootView.findViewById(R.id.welcome);
             welcome.setText("Hi " + name + ". Welcome to your city of " + city + " mobile money transfer app!");

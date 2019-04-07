@@ -25,6 +25,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -118,6 +119,7 @@ public class Orders extends Fragment {
                     Log.d("USER22", charge.toString());
                     values.add(charge);
                 }
+                Collections.reverse(values);
                 ListAdapter adapter = new OrderViewAdapter(getActivity(), values);
 
                 listview.setAdapter(adapter);
