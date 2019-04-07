@@ -162,7 +162,7 @@ public class Balance extends Fragment {
                     amount = Double.parseDouble(item.child("balance").getValue().toString());
                 }
 
-                amountField.setText(String.valueOf(amount));
+                amountField.setText("$" + String.valueOf(amount));
             }
 
             @Override

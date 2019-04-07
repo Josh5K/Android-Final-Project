@@ -35,6 +35,7 @@ public class PayCharge extends AppCompatActivity {
     private Double amountValue;
     private Button payCharge;
     private String finalAmount;
+    private Button deny;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +53,14 @@ public class PayCharge extends AppCompatActivity {
         twcurrentBalance = findViewById(R.id.beforeBalance);
         twnewBalance = findViewById(R.id.afterBalance);
         TextView newBalance = findViewById(R.id.balanceAfterLabel);
+        deny = findViewById(R.id.deny);
 
         payCharge = findViewById(R.id.payable);
-        if(status.equals("completed")) {
+        if(!status.toLowerCase().equals("pending")) {
             payCharge.setVisibility(View.GONE);
             twnewBalance.setVisibility(View.GONE);
             newBalance.setVisibility(View.GONE);
+            deny.setVisibility(View.GONE);
         }
 
         prefs = this.getSharedPreferences(
@@ -65,6 +68,13 @@ public class PayCharge extends AppCompatActivity {
         final String email = prefs.getString("email", null);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        deny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabase.child("charges").child(intent.getStringExtra("id")).child("status").setValue("denied");
+            }
+        });
 
         Query user = mDatabase.child("users").orderByChild("email").equalTo(email);
 
